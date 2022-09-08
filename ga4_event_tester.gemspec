@@ -5,12 +5,12 @@ require_relative "lib/ga4_event_tester/version"
 Gem::Specification.new do |spec|
   spec.name = "ga4_event_tester"
   spec.version = Ga4EventTester::VERSION
-  spec.authors = ["Government Digital Service"]
-  spec.email = ["govuk-dev@digital.cabinet-office.gov.uk"]
+  spec.authors = ["Graham Lewis"]
+  spec.email = ["gclssvglx@gmail.com"]
 
-  spec.summary = "Google Analytics 4 (GA4) Event Tester GOV.UK"
-  spec.description = "Tool for testing GA4 events"
-  spec.homepage = "https://github.com/alphagov/ga4_event_tester"
+  spec.summary = "An event tester for Google Analytics 4 (GA4)"
+  spec.description = "An event tester for Google Analytics 4 (GA4)"
+  spec.homepage = "https://github.com/gclssvglx/ga4_event_tester"
   spec.license = "MIT"
 
   spec.required_ruby_version = File.read(".ruby-version").chomp
@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
     end
   end
 
+  spec.add_dependency "logger"
   spec.add_dependency "selenium-webdriver"
   spec.add_dependency "webdrivers"
 

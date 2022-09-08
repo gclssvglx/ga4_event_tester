@@ -1,8 +1,6 @@
-# Ga4EventTester
+# GA4 Event Tester
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ga4_event_tester`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+An event tester for Google Analytics 4 (GA4)
 
 ## Installation
 
@@ -16,7 +14,20 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+$ bin/run -e ENVIRONMENT  # Run on a specific environment
+$ bin/run -a              # Run on all environments
+$ bin/run -v              # Display the version
+$ bin/run -h              # Display help
+```
+
+Valid environments are: integration, staging and production
+
+### Testing
+
+```bash
+$ bundle exec rake
+```
 
 ## Development
 

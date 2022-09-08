@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "ga4_event_tester"
+require "optparse"
+
+environments = %w[integration staging production]
+
+OptionParser.new do |opts|
+  opts.on("-v", "--version", "Display the version") do
+    puts "Version: #{Ga4EventTester::VERSION}"
+  end
+  opts.on("-e", "--environment ENVIRONMENT", "Run the tests on a specific environment") do |env|
+    if environments.include?(env)
+      tester = Ga4EventTester::Tester.new(env)
+      tester.test
+    else
+      puts "Error: Invalid environment [#{env}]. Valid environments are #{environments.inspect}"
+    end
+  end
+  opts.on("-a", "--all", "Run the tests on all environments") do
+    environments.each do |env|
+      puts env.upcase
+      tester = Ga4EventTester::Tester.new(env)
+      tester.test
+    end
+  end
+end.parse!
